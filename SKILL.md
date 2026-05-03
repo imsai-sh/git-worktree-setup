@@ -2,10 +2,14 @@
 name: git-worktree-setup
 description: Use when the user explicitly asks to "generate / update a git worktree auto-setup script for this repo." Note this skill is NOT triggered when a new worktree is created — the script and hook it produces are. Workflow is audit-the-repo-first, propose a draft plan, ask the user only the questions you can't infer, then write the tailored setup-worktree script + matching agent-tool hook config (Claude Code SessionStart / WorktreeCreate, Codex/Cursor manual + git hook, Gemini CLI, etc.). Also used to update an existing script as the project structure evolves.
 license: MIT
+homepage: https://github.com/imsai-sh/git-worktree-setup
+repository: https://github.com/imsai-sh/git-worktree-setup
 compatibility: Works with any agent that supports the Agent Skills format (Claude Code, Codex, Cursor, OpenCode, Gemini CLI, etc.). Generated setup script requires bash + git + standard POSIX utils (grep, awk, ln, cp, shasum).
 ---
 
 # Git Worktree Setup
+
+> Source / issues / updates: https://github.com/imsai-sh/git-worktree-setup
 
 ## What this skill is / is not
 

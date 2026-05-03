@@ -2,11 +2,15 @@
 name: git-worktree-setup
 description: 用户主动要求「为这个仓库生成 / 更新 git worktree 自动初始化脚本」时调用。这个 skill 本身不在新建 worktree 时被自动触发——它产出的脚本和 hook 才是。流程：先自己 audit 仓库结构推断初步方案，再拿方案找用户确认（只问推不出的关键题），最后生成针对该仓库定制的 setup-worktree 脚本 + 对应 agent 工具（Claude Code / Codex / Gemini CLI 等）的 hook 配置。也用于更新已有脚本。
 license: MIT
+homepage: https://github.com/imsai-sh/git-worktree-setup
+repository: https://github.com/imsai-sh/git-worktree-setup
 compatibility: 适配任何支持 Agent Skills 格式的 agent（Claude Code / Codex / Cursor / OpenCode / Gemini CLI 等）。生成的 setup 脚本依赖 bash + git + 标准 POSIX 工具（grep、awk、ln、cp、shasum）。
 ---
 
 # Git Worktree Setup
 
+> 源码 / issue / 更新：https://github.com/imsai-sh/git-worktree-setup
+>
 > 这是 SKILL.md 的中文审核版。最终发布时 `SKILL.md` 是英文，两份内容等价。
 
 ## 这个 skill 是什么 / 不是什么

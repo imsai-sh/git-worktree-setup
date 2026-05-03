@@ -1,6 +1,7 @@
 # git-worktree-setup
 
 [![skills.sh](https://skills.sh/b/imsai-sh/git-worktree-setup)](https://skills.sh/imsai-sh/git-worktree-setup)
+[![GitHub](https://img.shields.io/badge/GitHub-imsai--sh%2Fgit--worktree--setup-181717?logo=github)](https://github.com/imsai-sh/git-worktree-setup)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
 > English version: [README.md](README.md)
