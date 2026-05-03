@@ -3,6 +3,8 @@
 [![skills.sh](https://skills.sh/b/imsai-sh/git-worktree-setup)](https://skills.sh/imsai-sh/git-worktree-setup)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
+> 中文版：[README.zh.md](README.zh.md)
+
 An [Agent Skill](https://agentskills.io/specification) that teaches an AI coding agent (Claude Code, Codex, Cursor, Gemini CLI, etc.) how to **bootstrap a fresh `git worktree`** so it's actually runnable — `node_modules` linked, `.env` copied, dev port reserved, local DB state shared or isolated as appropriate — with a single per-repo script and a matching tool-specific hook.
 
 ## The problem
@@ -25,6 +27,12 @@ The agent then:
 4. **Generates a tailored `scripts/setup-worktree.sh`** + the matching hook config, then verifies idempotency and end-to-end `dev` startup.
 
 Re-run later when the project structure changes; it diff-edits the existing script.
+
+### A particularly good fit for Claude Code Desktop's worktree workflow
+
+Claude Code Desktop (Mac/Windows) spins up a fresh `.claude/worktrees/<task-id>` for every task you start, so each conversation works in isolation from your main checkout. Without bootstrap, those worktrees are dead on arrival — no `node_modules`, no `.env`, no port assignment, and the agent burns its first few turns re-installing deps before it can even run the code it's about to change.
+
+Install this skill once per repo and every future Desktop task lands in a worktree that's ready to `npm run dev` (or your equivalent) immediately. The same setup also works for hand-rolled `git worktree add` flows on the CLI — Desktop just makes the payoff most visible because it creates so many.
 
 ## Installation
 
