@@ -28,27 +28,29 @@ Re-run later when the project structure changes; it diff-edits the existing scri
 
 ## Installation
 
-This is an Agent Skill in the format described at [agentskills.io](https://agentskills.io/specification). Install it for your agent:
-
-### Claude Code
-
-User-level (available in all your repos):
+**Recommended** — use the [`skills` CLI](https://github.com/vercel-labs/skills). One command, works with Claude Code, Codex, Cursor, OpenCode, and [50+ other agents](https://skills.sh):
 
 ```bash
-git clone https://github.com/imsai-sh/git-worktree-setup.git ~/.claude/skills/git-worktree-setup
+npx skills add imsai-sh/git-worktree-setup
 ```
 
-Project-level (committed into a repo's `.claude/skills/`):
+The CLI auto-detects which agent(s) you have installed and drops the skill into the right directory (`.claude/skills/`, `.codex/skills/`, etc.). Pass `-a <agent>` to target a specific agent, `-g` for global install, or `-y` to skip prompts.
+
+Then in any conversation, say something like *"set up worktree auto-bootstrap for this repo"* — your agent will discover and invoke the skill.
+
+### Manual install (fallback)
+
+If you'd rather not run a CLI, clone this repo into your agent's skills directory directly:
 
 ```bash
+# Claude Code, user-level
+git clone https://github.com/imsai-sh/git-worktree-setup.git ~/.claude/skills/git-worktree-setup
+
+# Or project-level (committed into the repo)
 git submodule add https://github.com/imsai-sh/git-worktree-setup.git .claude/skills/git-worktree-setup
 ```
 
-Then in any conversation, say something like *"set up worktree auto-bootstrap for this repo"* — Claude Code will discover and invoke the skill.
-
-### Other agent tools
-
-Codex, Cursor, Aider, etc. don't yet have a unified "skills" loader. Easiest path: clone this repo somewhere and tell your agent *"read SKILL.md from `<path>` and follow its workflow."* The skill is just markdown + a few support files; nothing in it is Claude Code-specific.
+For agents without a standard skills loader, just point yours at this repo: *"read SKILL.md from `<path>` and follow its workflow."* The skill is plain markdown + a few support files — nothing here is Claude Code-specific.
 
 ## Repository layout
 
