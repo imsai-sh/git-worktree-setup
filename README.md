@@ -1,5 +1,8 @@
 # git-worktree-setup
 
+[![skills.sh](https://skills.sh/b/imsai-sh/git-worktree-setup)](https://skills.sh/imsai-sh/git-worktree-setup)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+
 An [Agent Skill](https://agentskills.io/specification) that teaches an AI coding agent (Claude Code, Codex, Cursor, Gemini CLI, etc.) how to **bootstrap a fresh `git worktree`** so it's actually runnable — `node_modules` linked, `.env` copied, dev port reserved, local DB state shared or isolated as appropriate — with a single per-repo script and a matching tool-specific hook.
 
 ## The problem
